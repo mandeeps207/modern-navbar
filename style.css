@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+:root {
+    --body-bg: rgb(220, 220, 220);
+    --nav-bg: linear-gradient(to right, #313421, #FC466B);
+    --border-radius: 1rem;
+    --text-color: #fff;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: var(--body-bg);
+    color: var(--text-color);
+}
+nav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    background-image: var(--nav-bg);
+}
+nav .logo {
+    padding: 1rem;
+}
+.nav-container {
+    display: flex;
+    position: relative;
+}
+nav ul {
+    margin-right: 1rem;
+    display: flex;
+    justify-content: end;
+    position: relative;
+    z-index: 1;
+}
+nav ul li {
+    list-style: none;
+    position: relative;
+}
+nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: all .2s ease-in-out;
+    width: 6rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li a:hover {
+    transform: translateY(3px);
+}
+nav ul li.active a {
+    color: #444;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .4), -1px -1px 2px rgba(255, 255, 255, 1);
+}
+nav ul li.active a:hover {
+    transform: translateY(0px);
+}
+.glider {
+    position: absolute;
+    height: 100%;
+    background-color: var(--body-bg);
+    border-radius: .5rem .5rem 0 0;
+    z-index: 0;
+    transition: all .2s ease-in-out;
+}
+.glider:before,
+.glider:after {
+    content: "";
+    position: absolute;
+    width: var(--border-radius);
+    height: var(--border-radius);
+    bottom: 0;
+}
+.glider:before {
+    box-shadow: 5px 5px 0 5px var(--body-bg);
+    border-radius: 0 0 100vh 0;
+    right: 100%;
+    left: auto;
+}
+.glider:after {
+    box-shadow: -5px 5px 0 5px var(--body-bg);
+    border-radius: 0 0 0 100vh;
+    left: 100%;
+    right: auto;
+}
